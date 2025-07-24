@@ -19,9 +19,6 @@ for pkg in required:
     if not importlib.util.find_spec(pkg):
         st.error(f"❌ Module '{pkg}' manquant. Installez-le avec 'pip install {pkg}'.")
         st.stop()
-seaborn_available = importlib.util.find_spec('seaborn') is not None
-if not seaborn_available:
-    st.warning("⚠️ Module 'seaborn' non trouvé. Utilisation d'une heatmap simplifiée avec Plotly.")
 
 # Configuration de la page avec un titre personnalisé et une mise en page large
 st.set_page_config(page_title=" Density Prediction Dashboard", layout="wide")
